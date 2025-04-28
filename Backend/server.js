@@ -17,8 +17,8 @@ const app = express();
 app.use(cookieParser());
 app.use(passport.initialize());
 
-const accessLogStream = fs.createWriteStream('./access.log', { flags: 'a' });
-app.use(morgan('combined', { stream: accessLogStream }));
+// const accessLogStream = fs.createWriteStream('./access.log', { flags: 'a' });
+// app.use(morgan('combined', { stream: accessLogStream }));
 
 // Create HTTP server and Socket.io instance
 const server = http.createServer(app);
@@ -79,6 +79,10 @@ app.use("/api/chat", chatRoutes);
 app.use("/api/analysis", analysisRoutes);
 app.get("/", (req, res) => {
   res.send("Welcome to the Car Bidding API");
+}
+);
+app.post("/", (req, res) => {
+  res.send("Welcome to the Car Bidding API post");
 }
 );
 
