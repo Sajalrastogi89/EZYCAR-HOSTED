@@ -77,6 +77,10 @@ app.use("/api/booking", bookingRoutes);
 app.use("/api/field", addNewFeildRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/analysis", analysisRoutes);
+app.get("/", (req, res) => {
+  res.send("Welcome to the Car Bidding API");
+}
+);
 
 // Start server and connect to database
 const PORT = process.env.PORT || 8000;
