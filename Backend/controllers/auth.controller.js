@@ -8,6 +8,7 @@ const { validationResult } = require("express-validator");
  */
 let login = async (req, res) => {
   try {
+    console.log("Login request received");
     // Validate request body using express-validator
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -62,10 +63,11 @@ let login = async (req, res) => {
       }
     });
   } catch (error) {
+    console.error("Error during login:", error);
     // Send error response
     res.status(500).json({ 
       status: false, 
-      message: "Server error" 
+      message: error || "Server error" 
     });
   }
 };
@@ -122,7 +124,7 @@ let signup = async (req, res) => {
     // Send error response
     res.status(500).json({ 
       status: false, 
-      message: "Server error" 
+      message: error || "Server error" 
     });
   }
 };
