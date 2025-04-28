@@ -1,28 +1,31 @@
-// Import required dependencies
-const AWS = require('aws-sdk');
+// Import required dependencies from AWS SDK v3
+const { SQSClient, SendMessageCommand } = require('@aws-sdk/client-sqs');
 
 // Initialize AWS SQS client with credentials from environment variables
-const sqs = new AWS.SQS({
+const sqs = new SQSClient({
   region: process.env.AWS_REGION,
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  credentials: {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  },
 });
 
 /**
  * @description Send a message to AWS SQS queue
- * @param {Object} sqs - AWS SQS client instance
  * @param {Object} params - Message parameters including QueueUrl and MessageBody
  * @returns {Promise<Object>} - SQS response data
  */
-async function awsSendMessage(sqs, params) {
+async function awsSendMessage(params) {
   try {
-    // Use the SQS SDK to send a message with the specified parameters
-    const data = await sqs.sendMessage(params).promise();
+    // Create a new SendMessageCommand with the provided params
+    const command = new SendMessageCommand(params);
+    // Send the message using the SQS client
+    const data = await sqs.send(command);
     // Return the response data
     return data;
   } catch (error) {
     // If an error occurs, log the error message
-    console.error('Error:', error);
+    console.error('Error sending message:', error);
   }
 }
 
@@ -37,10 +40,10 @@ const sendBidToQueue = async (bidData) => {
     MessageBody: JSON.stringify(bidData),
   };
 
-  const response = await awsSendMessage(sqs, params);
-
+  // Send the bid data to the queue and return the response
+  const response = await awsSendMessage(params);
   return response;
 };
 
 // Export functions for use in other modules
-module.exports = { sendBidToQueue }; 
+module.exports = { sendBidToQueue };

@@ -203,7 +203,7 @@ let getAllBids = async (req, res) => {
 
     // Create query object for filtering
     let query = {}; 
-    query.startDate = { $gte: new Date() }; 
+    query.startDate = { $gte: new Date(new Date().setDate(new Date().getDate()-1)) }; 
     // Add filters if provided
     if(carName && carName.trim()) {
       query["car.carName"] = { $regex: carName, $options: 'i' };

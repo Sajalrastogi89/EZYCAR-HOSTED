@@ -82,7 +82,6 @@ const userSubModelSchema = new mongoose.Schema({
     required: true,
     trim: true,
     lowercase: true,
-    unique: true,
   },
   phone: {
     type: String,
