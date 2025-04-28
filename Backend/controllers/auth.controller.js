@@ -16,7 +16,7 @@ let login = async (req, res) => {
         errors: errors.array() 
       });
     }
-
+    console.log("no error in validation");
     // Extract credentials from request body
     const { email, password } = req.body;
 
@@ -26,14 +26,14 @@ let login = async (req, res) => {
       status: false, 
       message: "Email not found" 
     });
-
+    console.log("user found in db");
     // Verify password using bcrypt
     const isMatch = await bcryptjs.compare(password, user.password);
     if (!isMatch) return res.status(400).json({
       status: false, 
       message: "Invalid password" 
     });
-
+    console.log("password matched");
     // Set token expiration time (in seconds)
     const expiresIn = 86400; // 24 hours in seconds
     const expiresAt = Math.floor(Date.now() / 1000) + expiresIn;
@@ -48,7 +48,7 @@ let login = async (req, res) => {
       process.env.ACCESS_TOKEN_SECRET,
       { expiresIn }
     );
-
+    console.log("token generated");
     let userData = user.toObject();
     delete userData.password;
 
@@ -63,7 +63,7 @@ let login = async (req, res) => {
       }
     });
   } catch (error) {
-    console.error("Error during login:", error);
+    console.log("Error during login:", error);
     // Send error response
     res.status(500).json({ 
       status: false, 
