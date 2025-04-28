@@ -19,7 +19,8 @@ let login = async (req, res) => {
     console.log("no error in validation");
     // Extract credentials from request body
     const { email, password } = req.body;
-
+    console.log("email: ", email);
+    console.log("password: ", password);
     // Check if user exists in database
     const user = await User.findOne({ email });
     if (!user) return res.status(400).json({
