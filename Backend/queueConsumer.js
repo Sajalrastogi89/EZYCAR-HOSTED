@@ -31,6 +31,7 @@ io.on("connection", (socket) => {
   setInterval(async () => {
     try {
       const result = await getBidFromQueue();
+      console.log("result", result);
       if (result && result.Messages && result.Messages.length > 0) {
         const message = JSON.parse(result.Messages[0].Body);
         io.to(message.user._id).emit('newBid', {
@@ -46,7 +47,7 @@ io.on("connection", (socket) => {
 })();
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT1 || 3000;
 server.listen(PORT, () => {
   console.log(`Queue Consumer Server running on port ${PORT}`);
 });
