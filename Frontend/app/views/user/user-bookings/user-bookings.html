@@ -157,7 +157,7 @@
        <!-- Booking Details -->
        <div class="row">
         <!-- Car Details -->
-        <div class="col-md-6">
+        <div class="col-md-5">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title"><i class="fa fa-car"></i> Car Details</h3>
@@ -165,26 +165,30 @@
             <div class="panel-body">
               <div class="media">
                 <div class="media-left">
-                  <img class="media-object img-thumbnail" ng-src="{{ booking.car.imageUrl }}" alt="{{ booking.car.carName }}" style="max-width: 150px;">
+                  <img class="media-object img-thumbnail" ng-src="{{ booking.car.imageUrl }}" alt="{{ booking.car.carName }}" style="max-width: 100px;">
                 </div>
                 <div class="media-body">
                   <h4 class="media-heading">{{ booking.car.carName }}</h4>
-                  <div class="row">
-                    <div class="col-xs-6">
-                      <ul class="list-unstyled">
-                        <li><strong>Traveled:</strong> {{ booking.car.travelled || 0 }} km</li>
-                        <li><strong>Base Price:</strong> {{ booking.car.basePrice | currency:"₹" }}</li>
-                        <li><strong>Price per Km:</strong> {{ booking.car.pricePerKm | currency:"₹" }}</li>
-                        <li ng-if="booking.tripType === 'outStation'"><strong>Outstation:</strong> {{booking.car.outStationCharges | currency:"₹"}}/day</li>
-                      </ul>
-                    </div>
-                    <div class="col-xs-6">
-                      <ul class="list-unstyled">
-                        <li><strong>Start Date:</strong> {{ booking.startDate | date:'MMM d, y' }}</li>
-                        <li><strong>End Date:</strong> {{ booking.endDate | date:'MMM d, y' }}</li>
-                        <li><strong>Duration:</strong> {{ calculateDuration(booking.startDate, booking.endDate) }} days</li>
-                      </ul>
-                    </div>
+                  <ul class="list-unstyled">
+                    <li><strong>Traveled:</strong> {{ booking.car.travelled || 0 }} km</li>
+                    <li><strong>Base Price:</strong> {{ booking.car.basePrice | currency:"₹" }}</li>
+                    <li><strong>Price per Km:</strong> {{ booking.car.pricePerKm | currency:"₹" }}</li>
+                    <li ng-if="booking.tripType === 'outStation'"><strong>Outstation:</strong> {{booking.car.outStationCharges | currency:"₹"}}/day</li>
+                  </ul>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="well well-sm text-center">
+                    <p class="text-muted"><small>Start Date</small></p>
+                    <h4>{{ booking.startDate | date:'MMM d, y' }}</h4>
+                  </div>
+                </div>
+                <div class="col-xs-6">
+                  <div class="well well-sm text-center">
+                    <p class="text-muted"><small>End Date</small></p>
+                    <h4>{{ booking.endDate | date:'MMM d, y' }}</h4>
                   </div>
                 </div>
               </div>
@@ -192,11 +196,11 @@
           </div>
         </div>
         
-        <!-- User Details -->
-        <div class="col-md-6">
+        <!-- Owner Details -->
+        <div class="col-md-4">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title"><i class="fa fa-user"></i> Owner Details</h3>
+              <h3 class="panel-title"><i class="fa fa-user"></i> Owner Information</h3>
             </div>
             <div class="panel-body">
               <div class="media" ng-if="booking.owner">
@@ -210,44 +214,43 @@
                 </div>
               </div>
               <div class="alert alert-warning" ng-if="!booking.owner">
-                <i class="fa fa-exclamation-triangle"></i> User details not available
+                <i class="fa fa-exclamation-triangle"></i> Owner details not available
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Status -->
+        <div class="col-md-3">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><i class="fa fa-tasks"></i> Status</h3>
+            </div>
+            <div class="panel-body">
+              <p class="text-center text-muted">
+                <small>Payment Status</small>
+              </p>
+              <p class="text-center">
+                <span class="label label-lg" 
+                      ng-class="{
+                        'label-warning': booking.paymentStatus === 'pending',
+                        'label-success': booking.paymentStatus === 'paid'
+                      }"
+                      style="font-size: 1.2em; padding: 8px 12px;">
+                  {{ booking.paymentStatus | uppercase }}
+                </span>
+              </p>
+              <hr>
+              <div ng-if="booking.paymentStatus === 'paid'">
+                <button class="btn btn-primary btn-block" ng-click="getInvoice(booking)">
+                  <i class="fa fa-file-pdf-o"></i> Download Invoice
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-       <!-- Invoice for paid bookings -->
-       <div
-       class="panel panel-success"
-       ng-if="booking.paymentStatus==='paid'"
-     >
-       <div class="panel-heading">
-         <h3 class="panel-title">
-           <i class="fa fa-file-text"></i> Payment Information
-         </h3>
        </div>
-       <div class="panel-body">
-         <div class="row">
-           <div class="col-sm-6">
-             <dl class="dl-horizontal">
-               <dt>Payment Status:</dt>
-               <dd><span class="label label-success">Paid</span></dd>
-               <dt>Amount Paid:</dt>
-               <dd>{{ booking.totalAmount | currency:"₹" }}</dd>
-             </dl>
-           </div>
-           <div class="col-sm-6 text-right">
-             <button
-               class="btn btn-primary"
-               ng-click="getInvoice(booking)"
-             >
-               <i class="fa fa-file-pdf-o"></i> Download Invoice
-             </button>
-           </div>
-         </div>
-       </div>
-     </div>
-      </div>
     </uib-accordion>
   </div>
 
