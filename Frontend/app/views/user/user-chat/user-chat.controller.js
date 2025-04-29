@@ -6,7 +6,8 @@ myApp.controller("userChatController", [
   "chatService",
   "$timeout",
   "ToastService",
-  function ($scope, chatService, $timeout, ToastService) {
+  "BASE_URL",
+  function ($scope, chatService, $timeout, ToastService, BASE_URL) {
     // ==========================================
     // State Management
     // ==========================================
@@ -36,7 +37,7 @@ myApp.controller("userChatController", [
       $scope.isLoading = true;
       
       // Initialize socket connection
-      socket = io("http://localhost:8000");
+      socket = io(`${BASE_URL}`);
 
       // Listen for new messages
       socket.on("newMessage", function (data) {

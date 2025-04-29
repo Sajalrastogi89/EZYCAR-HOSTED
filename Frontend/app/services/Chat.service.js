@@ -26,7 +26,7 @@ myApp.service("chatService", [
       };
       $http.post(`${BASE_URL}/api/chat/addNewChat`,chatObject) 
       .then((response) => {
-        socket = io("http://localhost:8000");
+        socket = io(`${BASE_URL}`);
         socket.emit("joinChat", response.data._id);
         deferred.resolve(response.data);
       }
