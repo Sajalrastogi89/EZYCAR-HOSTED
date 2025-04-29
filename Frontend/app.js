@@ -34,11 +34,7 @@ function($scope, AuthService, ToastService) {
       socket = io("https://ezycar-hosted-1.onrender.com");
       currentUser = user;
       
-      socket.on('connect', function() {
-        console.log('Socket connected');
-        // Join user's room after successful connection
-        socket.emit('joinUserRoom', user._id);
-      });
+      socket.emit('joinUserRoom', user._id);
       
       // Listen for new bid notifications
       socket.on('newBid', function(data) {
