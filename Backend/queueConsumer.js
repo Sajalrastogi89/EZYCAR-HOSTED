@@ -46,9 +46,7 @@ io.on("connection", (socket) => {
 })();
 
 
-// IMPORTANT: Dynamic port for hosting
-// const PORT = process.env.PORT || 3000;
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`Queue Consumer Server running on port ${PORT}`);
 });
