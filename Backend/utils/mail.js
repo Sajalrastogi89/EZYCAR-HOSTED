@@ -37,20 +37,6 @@ const sendMail = async (options) => {
 
 /**
  * @description Sends a bid acceptance notification email with enhanced formatting and details
- * @param {Object} data - Bid and user information data
- * @param {string} data.userEmail - Recipient's email address
- * @param {string} data.userName - Recipient's full name
- * @param {string} data.carName - Name/model of the car being bid on
- * @param {number} data.bidAmount - Accepted bid amount value
- * @param {string} data.ownerName - Car owner's full name
- * @param {string} data.ownerEmail - Car owner's contact email
- * @param {string} data.ownerPhone - Car owner's phone number (optional)
- * @param {string} data.startDate - Booking start date (optional)
- * @param {string} data.endDate - Booking end date (optional)
- * @param {string} data.city - Car location city (optional)
- * @param {string} data.image - Car image URL (optional)
- * @param {string} data.carDetails - Additional car specifications (optional)
- * @returns {Promise<Object>} - Email sending result information
  */
 const sendBidAcceptedEmail = async (data) => {
   const subject = `Great News! Your Bid for ${data.carName} Has Been Accepted`;
@@ -148,19 +134,7 @@ const sendBidAcceptedEmail = async (data) => {
 
 /**
  * @description Sends a bid rejection notification email with enhanced formatting and details
- * @param {Object} data - Bid and user information data
- * @param {string} data.userEmail - Recipient's email address
- * @param {string} data.userName - Recipient's full name
- * @param {string} data.carName - Name/model of the car being bid on
- * @param {number} data.bidAmount - Rejected bid amount value
- * @param {string} data.city - Car location city (optional)
- * @param {string} data.image - Car image URL (optional)
- * @param {string} data.carDetails - Additional car specifications (optional)
- * @param {string} data.startDate - Requested booking start date (optional)
- * @param {string} data.endDate - Requested booking end date (optional)
- * @param {string} data.reason - Rejection reason explanation (optional)
- * @returns {Promise<Object>} - Email sending result information
- */
+*/
 const sendBidRejectedEmail = async (data) => {
   const subject = `Update on Your Bid for ${data.carName}`;
   
@@ -262,20 +236,7 @@ const sendBidRejectedEmail = async (data) => {
 
 /**
  * @description Sends a bid confirmation email when a bid is successfully added
- * @param {Object} data - Bid and user information data
- * @param {string} data.userEmail - Bidder's email address
- * @param {string} data.userName - Bidder's full name
- * @param {string} data.carName - Name/model of the car being bid on
- * @param {number} data.bidAmount - Bid amount value
- * @param {string} data.startDate - Booking start date
- * @param {string} data.endDate - Booking end date
- * @param {string} data.tripType - Type of trip (inCity/outStation)
- * @param {string} data.ownerName - Car owner's name
- * @param {string} data.ownerEmail - Car owner's email
- * @param {string} data.ownerPhone - Car owner's phone number
- * @param {string} data.carDetails - Additional car details
- * @returns {Promise<Object>} - Email sending result information
- */
+*/
 const sendBidAddedEmail = async (data) => {
   const subject = `Bid Confirmation for ${data.carName}`;
   

@@ -31,7 +31,7 @@ function($scope, AuthService, ToastService) {
 
   const initSocket = function(user) {
     if (!socket) {
-      socket = io("http://127.0.0.1:3000");
+      socket = io("https://ezycar-hosted-1.onrender.com");
       currentUser = user;
       
       socket.on('connect', function() {
