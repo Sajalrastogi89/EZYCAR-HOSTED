@@ -94,12 +94,12 @@ myApp.component("bestBidsModal", {
                 <!-- Action Buttons for Pending Bids -->
                 <div ng-if="bid.status === 'pending'" class="btn-group btn-group-justified" style="margin-top: 5px;">
                   <div class="btn-group btn-group-sm">
-                    <button class="btn btn-danger" ng-click="$ctrl.rejectBid(bid)" ng-disabled="$ctrl.loading" style="font-size: max(min(14px, 1.3vw), 11px); padding: 2px 4px;">
+                    <button class="btn btn-danger" ng-click="$ctrl.rejectBid(bid)" ng-disabled="$ctrl.loading" style="font-size: max(min(14px, 1.3vw), 6px); padding: 2px 4px;">
                       <i class="fa fa-times"></i> Reject
                     </button>
                   </div>
                   <div class="btn-group btn-group-sm">
-                    <button class="btn btn-success" ng-click="$ctrl.acceptBid(bid)" ng-disabled="$ctrl.loading" style="font-size: max(min(14px, 1.3vw), 11px); padding: 2px 4px;">
+                    <button class="btn btn-success" ng-click="$ctrl.acceptBid(bid)" ng-disabled="$ctrl.loading" style="font-size: max(min(14px, 1.3vw), 6px); padding: 2px 4px;">
                       <i class="fa fa-check"></i> Accept
                     </button>
                   </div>
