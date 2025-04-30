@@ -43,7 +43,7 @@ myApp.component("bookingDetailsModal", {
           <div class="panel-body">
             <div class="row">
               <!-- Customer Details -->
-              <div class="col-md-4">
+              <div class="col-xs-4">
                 <h5><i class="fa fa-user text-muted"></i> Customer</h5>
                 <p style="margin-bottom: 5px;"><strong>{{booking.user.name || 'Unknown'}}</strong></p>
                 </p>
@@ -53,14 +53,14 @@ myApp.component("bookingDetailsModal", {
               </div>
               
               <!-- Car Details -->
-              <div class="col-md-4">
+              <div class="col-xs-4">
                 <h5><i class="fa fa-car text-muted"></i> Vehicle</h5>
                 <p style="margin-bottom: 5px;"><strong>{{booking.car.carName || 'Unknown'}}</strong></p>
                 <p style="margin-bottom: 5px;">{{booking.car.category || ''}}</p>
               </div>
               
               <!-- Payment Details -->
-              <div class="col-md-4">
+              <div class="col-xs-4">
                 <h5><i class="fa fa-money text-muted"></i> Payment</h5>
                 <h4 class="text-success" style="margin-top: 5px; margin-bottom: 10px;" ng-show="booking.totalAmount">
                    {{booking.totalAmount | currency:"₹"}}

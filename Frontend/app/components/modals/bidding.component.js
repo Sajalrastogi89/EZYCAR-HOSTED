@@ -65,7 +65,7 @@ myApp.component("bestBidsModal", {
           <div class="panel-body">
             <div class="row">
               <!-- Customer Details -->
-              <div class="col-md-4">
+              <div class="col-xs-4">
                 <h5><i class="fa fa-user text-muted"></i> Customer</h5>
                 <p style="margin-bottom: 5px;"><strong>{{bid.user.name || 'Unknown'}}</strong></p>
                 <p style="margin-bottom: 5px;" ng-if="bid.user.email">
@@ -77,7 +77,7 @@ myApp.component("bestBidsModal", {
               </div>
               
               <!-- Car Details -->
-              <div class="col-md-4">
+              <div class="col-xs-4">
                 <h5><i class="fa fa-car text-muted"></i> Vehicle</h5>
                 <p style="margin-bottom: 5px;"><strong>{{bid.car.carName || 'Unknown'}}</strong></p>
                 <p style="margin-bottom: 5px;">{{bid.car.category || ''}}</p>
@@ -85,7 +85,7 @@ myApp.component("bestBidsModal", {
               </div>
               
               <!-- Bid Actions -->
-              <div class="col-md-4">
+              <div class="col-xs-4">
                 <h5><i class="fa fa-gavel text-muted"></i> Bid Amount</h5>
                 <h4 class="text-primary" style="margin-top: 5px; margin-bottom: 15px;">
                   ₹{{bid.bidAmount}}
