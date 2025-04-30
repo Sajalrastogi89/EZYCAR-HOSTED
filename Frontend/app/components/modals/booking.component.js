@@ -63,7 +63,7 @@ myApp.component("bookingDetailsModal", {
               <div class="col-xs-4">
                 <h5><i class="fa fa-money text-muted"></i> Payment</h5>
                 <h4 class="text-success" style="margin-top: 5px; margin-bottom: 10px;" ng-show="booking.totalAmount">
-                   {{booking.totalAmount | currency:"₹"}}
+                   ₹{{booking.totalAmount | number:0}}
                 </h4>
                 <h4 class="text-danger" style="margin-top: 5px; margin-bottom: 10px;" ng-hide="booking.totalAmount">
                    {{"In Progress"}}
