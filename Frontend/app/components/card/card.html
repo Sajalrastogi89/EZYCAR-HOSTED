@@ -55,7 +55,7 @@
       <!-- Left Side: Car Details -->
       <div class="col-xs-7" style="margin-top: 8px">
         <div class="row">
-          <div class="col-xs-6 text-muted">Base Price:</div>
+          <div class="col-xs-6 text-muted" style="white-space: nowrap;">Base Price:</div>
           <div class="col-xs-6 text-right">
             <strong>{{ $ctrl.car.basePrice | currency:"₹" }}</strong>
           </div>
@@ -67,13 +67,13 @@
           </div>
         </div>
         <div class="row" style="margin-top: 2px">
-          <div class="col-xs-6 text-muted">Price per km:</div>
+          <div class="col-xs-6 text-muted" style="white-space: nowrap;">Price per km:</div>
           <div class="col-xs-6 text-right">
             <strong>{{$ctrl.car.pricePerKm | currency:"₹"}}</strong>
           </div>
         </div>
         <div class="row" style="margin-top: 2px">
-          <div class="col-xs-8 text-muted">Fine Per Extra Day:</div>
+          <div class="col-xs-8 text-muted" style="white-space: nowrap;">Fine Per Extra Day:</div>
           <div class="col-xs-4 text-right">
             <strong>{{$ctrl.car.finePercentage}} %</strong>
           </div>
@@ -115,10 +115,11 @@
           <!-- Feature 1 -->
           <div
             ng-if="$ctrl.car.selectedFeatures && $ctrl.car.selectedFeatures.length > 0"
-            style="margin-bottom: 2px"
+            style="margin-bottom: 2px; white-space: nowrap;"
+
           >
             <i class="fa fa-check-circle text-success"></i>
-            <span style="color: #555; word-wrap: break-word"
+            <span style="color: #555;"
               >{{$ctrl.car.selectedFeatures[0]}}</span
             >
           </div>
@@ -126,10 +127,10 @@
           <!-- Feature 2 -->
           <div
             ng-if="$ctrl.car.selectedFeatures && $ctrl.car.selectedFeatures.length > 1"
-            style="margin-bottom: 2px"
+            style="margin-bottom: 2px; white-space: nowrap;"
           >
             <i class="fa fa-check-circle text-success"></i>
-            <span style="color: #555; word-wrap: break-word"
+            <span style="color: #555;"
               >{{$ctrl.car.selectedFeatures[1]}}</span
             >
           </div>
@@ -137,10 +138,10 @@
           <!-- Feature 3 -->
           <div
             ng-if="$ctrl.car.selectedFeatures && $ctrl.car.selectedFeatures.length > 2"
-            style="margin-bottom: 2px"
+            style="margin-bottom: 2px; white-space: nowrap;"
           >
             <i class="fa fa-check-circle text-success"></i>
-            <span style="color: #555; word-wrap: break-word"
+            <span style="color: #555;"
               >{{$ctrl.car.selectedFeatures[2]}}</span
             >
           </div>
