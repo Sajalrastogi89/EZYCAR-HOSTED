@@ -30,7 +30,7 @@ myApp.controller("UserController", [
     $scope.sortOptions = [
       { value: "", label: "Sort" },
       { value: "basePrice", label: "Price: High to Low" },
-      { value: "carName", label: "Name (A-Z)" },
+      { value: "carName", label: "Name (Z-A)" },
       { value: "travelled", label: "Kilometers Travelled" },
     ];
     $scope.sortOption = "";

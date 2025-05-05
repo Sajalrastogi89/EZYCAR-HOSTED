@@ -36,7 +36,7 @@ myApp.controller("OwnerDashboardController", [
     // Sort options
     $scope.sortOptions = [
       { value: "basePrice", label: "Price: High to Low" },
-      { value: "carName", label: "Name (A-Z)" },
+      { value: "carName", label: "Name (Z-A)" },
       { value: "travelled", label: "Kilometers Travelled" },
     ];
     $scope.sortOption = "basePrice"; // Default sort option
