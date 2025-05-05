@@ -70,6 +70,7 @@ myApp.controller("OwnerDashboardController", [
      * Also calculates dashboard metrics like revenue and booking stats
      */
     $scope.init = function () {
+      $scope.isLoading = true;
       async.parallel({
         // Fetch all cars
         cars: function (callback) {
@@ -158,8 +159,11 @@ myApp.controller("OwnerDashboardController", [
               $scope.activeBookings += group.count || 0;
             });
           }
+
         } catch (error) {
           ToastService.error("Error displaying dashboard data", 3000);
+        } finally {
+          $scope.isLoading = false;
         }
       });
     };
