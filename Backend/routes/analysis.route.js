@@ -42,7 +42,7 @@ router.get("/owner/top-booked-cars", authenticateToken, authorizeRoles("owner"),
 router.get("/owner/booking-trend", authenticateToken, authorizeRoles("owner"), getOwnerBookingTrend);
 router.get("/owner/trip-type-analysis", authenticateToken, authorizeRoles("owner"), getTripTypeAnalysis);
 router.get("/owner/late-returns-analysis", authenticateToken, authorizeRoles("owner"), getLateReturnsAnalysis);
-router.get("/owner/mileage-analysis", authenticateToken, authorizeRoles("owner"), getPerformanceAnalysis);
+router.get("/owner/performance-analysis", authenticateToken, authorizeRoles("owner"), getPerformanceAnalysis);
 router.get('/owner/car-features', authenticateToken, authorizeRoles('owner'), getCarFeatureAnalysis);
 router.get('/owner/booking-count', authenticateToken, authorizeRoles('owner'), bookingCountAnalysis);
 

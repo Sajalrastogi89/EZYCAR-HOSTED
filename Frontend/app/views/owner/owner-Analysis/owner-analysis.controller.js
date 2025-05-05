@@ -112,16 +112,16 @@ myApp.controller("OwnerAnalysisController", [
         };
       }
 
-      // Process Mileage Analysis
+      // Process performance Analysis
       if ($scope.analytics.performanceAnalysis) {
-        $scope.mileageChartData = {
+        $scope.performanceChartData = {
           labels: $scope.analytics.performanceAnalysis.map(item => item.carName),
           totalDistance: $scope.analytics.performanceAnalysis.map(item => item.metrics.totalDistance || 0),
           avgDistance: $scope.analytics.performanceAnalysis.map(item => item.metrics.avgTripDistance || 0),
           totalTrips: $scope.analytics.performanceAnalysis.map(item => item.metrics.totalTrips || 0),
           maxDistance: $scope.analytics.performanceAnalysis.map(item => item.metrics.maxTripDistance || 0),
         };
-        (`$scope.mileageChartData:`, $scope.mileageChartData);
+        (`$scope.performanceChartData:`, $scope.performanceChartData);
       }
 
       // Process Car Feature Analysis
@@ -267,33 +267,33 @@ myApp.controller("OwnerAnalysisController", [
           );
         }
 
-        // Mileage Analysis Chart
+        // performance Analysis Chart
         if ($scope.analytics.performanceAnalysis && $scope.analytics.performanceAnalysis.length > 0) {
-          (`$scope.mileageChartData:`, $scope.mileageChartData);
+          (`$scope.performanceChartData:`, $scope.performanceChartData);
           $scope.renderChart(
-            "mileageChart",
-            $scope.mileageChartData.labels,
+            "performanceChart",
+            $scope.performanceChartData.labels,
             [
               {
                 label: "Total Trips",
-                data: $scope.mileageChartData.totalTrips,
+                data: $scope.performanceChartData.totalTrips,
               },
               {
                 label: "Total Distance",
-                data: $scope.mileageChartData.totalDistance,
+                data: $scope.performanceChartData.totalDistance,
               },
               {
                 label: "Average Distance",
-                data: $scope.mileageChartData.avgDistance,
+                data: $scope.performanceChartData.avgDistance,
               },
               {
                 label: "Max Trip Distance",
-                data: $scope.mileageChartData.maxDistance,
+                data: $scope.performanceChartData.maxDistance,
               },
               
             ],
             "bar",
-            "Mileage Analysis"
+            "Performance Analysis"
           );
         }
 
