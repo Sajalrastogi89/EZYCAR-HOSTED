@@ -119,9 +119,8 @@
             <!-- Accordion Heading -->
             <uib-accordion-heading>
               <div class="row">
-                <div class="col-xs-7">
-                  <i class="fa fa-car"></i>
-                  <strong>{{ bid.car.carName }}</strong> - {{ bid.car.category }}
+                <div class="col-xs-8">
+                  <i class="fa fa-car"></i> {{ bid.car.carName }}
                   <span
                     class="label"
                     ng-class="{'label-success': bid.status === 'accepted', 
@@ -129,7 +128,7 @@
                                   'label-danger': bid.status === 'rejected'}"
                     style="margin-left: 2px;"
                   >
-                    {{bid.status}}
+                    {{bid.status=== 'accepted' ? 'Accepted' : (bid.status === 'pending' ? 'Pending' : 'Rejected')}}
                   </span>
                   <!-- Add trip type badge -->
                   <span 
@@ -141,9 +140,12 @@
                     {{bid.tripType === 'outStation' ? 'Outstation' : 'In-City'}}
                   </span>
                 </div>
-                <div class="col-xs-5 text-right">
-                  <span class="label label-primary" style="margin-left: 2px;">{{bid.bidAmount | currency:"₹"}}</span>
-                  <span class="text-muted" style="margin-left: 2px;"><small>{{bid.startDate | date:'MMM d, y'}}</small></span>
+                <div class="col-xs-4 text-right">
+                  <span class="label label-primary">
+                    {{bid.bidAmount | currency:"₹"}}</span
+                  >
+                  <span class="text-muted"
+                    ><small>{{bid.startDate | date:'MMM d, y'}}</small></span>
                 </div>
               </div>
             </uib-accordion-heading>
