@@ -280,7 +280,7 @@ let getBestBidsByCarId = async (req, res) => {
     startDate.setHours(0, 0, 0, 0);
     
     const endDate = new Date();
-    endDate.setDate(endDate.getDate() + 30);
+    endDate.setDate(endDate.getDate() + 15);
     endDate.setHours(23, 59, 59, 999);
     
     const status = "pending";
