@@ -93,7 +93,7 @@ myApp.service('AnalysisService', ['$http','BASE_URL','$q', function($http, BASE_
 
   this.getPerformanceAnalysis = function(params) {
     let deferred = $q.defer();
-    $http.get(`${BASE_URL}/api/analysis/owner/mileage-analysis`, {params}).then((response) => {
+    $http.get(`${BASE_URL}/api/analysis/owner/performance-analysis`, {params}).then((response) => {
       deferred.resolve(response.data);
     })
     .catch((error) => {
