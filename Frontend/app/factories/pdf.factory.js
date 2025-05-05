@@ -206,6 +206,11 @@ myApp.factory('PDFFactory', ['$window', function($window) {
     doc.text(formatCurrency(baseRentalCost), 165, y + 5, { align: "right" });
     
     y += 8;
+
+    doc.setDrawColor(200, 200, 200);
+    doc.line(20, y, 190, y);
+    
+    y += 5;
     
     // Bid amount
     doc.text(`Bid Amount (${formatCurrency(booking.bidAmount)} × ${duration} days)`, 25, y + 5);
