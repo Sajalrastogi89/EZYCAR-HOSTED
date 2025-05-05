@@ -229,7 +229,7 @@ myApp.factory('PDFFactory', ['$window', function($window) {
     // Late fees if applicable
     if (lateFees > 0) {
       const finePercentage = booking.car.finePercentage || 50;
-      doc.text(`Late Return Fees (${booking.lateDays || 0} days × ${formatCurrency(booking.bidAmount)} × ${finePercentage}%)`, 25, y + 5);
+      doc.text(`Late Return Fees (${booking.lateDays || 0} days × (${formatCurrency(booking.bidAmount)} + (${formatCurrency(booking.bidAmount)} × ${finePercentage}%)))`, 25, y + 5);
       doc.text(formatCurrency(lateFees), 165, y + 5, { align: "right" });
       y += 8;
     }
