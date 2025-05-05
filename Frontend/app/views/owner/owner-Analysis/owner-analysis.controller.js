@@ -113,13 +113,13 @@ myApp.controller("OwnerAnalysisController", [
       }
 
       // Process Mileage Analysis
-      if ($scope.analytics.mileageAnalysis) {
+      if ($scope.analytics.performanceAnalysis) {
         $scope.mileageChartData = {
-          labels: $scope.analytics.mileageAnalysis.map(item => item.carName),
-          totalDistance: $scope.analytics.mileageAnalysis.map(item => item.metrics.totalDistance || 0),
-          avgDistance: $scope.analytics.mileageAnalysis.map(item => item.metrics.avgTripDistance || 0),
-          totalTrips: $scope.analytics.mileageAnalysis.map(item => item.metrics.totalTrips || 0),
-          maxDistance: $scope.analytics.mileageAnalysis.map(item => item.metrics.maxTripDistance || 0),
+          labels: $scope.analytics.performanceAnalysis.map(item => item.carName),
+          totalDistance: $scope.analytics.performanceAnalysis.map(item => item.metrics.totalDistance || 0),
+          avgDistance: $scope.analytics.performanceAnalysis.map(item => item.metrics.avgTripDistance || 0),
+          totalTrips: $scope.analytics.performanceAnalysis.map(item => item.metrics.totalTrips || 0),
+          maxDistance: $scope.analytics.performanceAnalysis.map(item => item.metrics.maxTripDistance || 0),
         };
         (`$scope.mileageChartData:`, $scope.mileageChartData);
       }
@@ -268,7 +268,7 @@ myApp.controller("OwnerAnalysisController", [
         }
 
         // Mileage Analysis Chart
-        if ($scope.analytics.mileageAnalysis && $scope.analytics.mileageAnalysis.length > 0) {
+        if ($scope.analytics.performanceAnalysis && $scope.analytics.performanceAnalysis.length > 0) {
           (`$scope.mileageChartData:`, $scope.mileageChartData);
           $scope.renderChart(
             "mileageChart",
@@ -461,7 +461,7 @@ myApp.controller("OwnerAnalysisController", [
           $scope.loadAnalyticsTables("getTripTypeAnalysis", "tripTypeAnalysis");
           break;
         case 4:
-          $scope.loadAnalyticsTables("getMileageAnalysis", "mileageAnalysis");
+          $scope.loadAnalyticsTables("getPerformanceAnalysis", "performanceAnalysis");
           break;
         case 5:
           $scope.loadAnalyticsTables("getCarFeatureAnalysis", "carFeatureAnalysis");

@@ -305,7 +305,7 @@ const getLateReturnsAnalysis = async (req, res) => {
   }
 }
 
-const getMileageAnalysis = async (req, res) => {
+const getPerformanceAnalysis = async (req, res) => {
   try{
     const { startDate, endDate } = req.query;
     const ownerId = req.user._id;
@@ -341,7 +341,8 @@ const getMileageAnalysis = async (req, res) => {
           }
         }
       },
-      { $sort: { "metrics.totalDistance": -1 } }
+      { $sort: { "metrics.totalDistance": -1 } },
+      { $limit: 10 }
     ])
     return res.status(200).json({
       success: true,
@@ -820,7 +821,7 @@ module.exports = {
   getOwnerBookingTrend,
   getTripTypeAnalysis,
   getLateReturnsAnalysis,
-  getMileageAnalysis,
+  getPerformanceAnalysis,
   getRevenueSummary,
   bookingCountAnalysis,
   getTopOwners,

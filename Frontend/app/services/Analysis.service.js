@@ -91,7 +91,7 @@ myApp.service('AnalysisService', ['$http','BASE_URL','$q', function($http, BASE_
     return deferred.promise;
   }
 
-  this.getMileageAnalysis = function(params) {
+  this.getPerformanceAnalysis = function(params) {
     let deferred = $q.defer();
     $http.get(`${BASE_URL}/api/analysis/owner/mileage-analysis`, {params}).then((response) => {
       deferred.resolve(response.data);
