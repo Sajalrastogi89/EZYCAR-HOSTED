@@ -110,6 +110,7 @@
              'panel-success': bid.status === 'accepted',
              'panel-danger': bid.status === 'rejected'
            }"
+            is-open="status.open"
            ng-repeat="bid in biddings">
         <uib-accordion-heading>
           <div class="row">

@@ -110,6 +110,7 @@
             uib-accordion-group
             class="panel"
             ng-repeat="bid in filteredBiddings = (biddings)"
+            is-open="status.open"
             ng-class="{
               'panel-warning': bid.status === 'pending',
               'panel-success': bid.status === 'accepted',
