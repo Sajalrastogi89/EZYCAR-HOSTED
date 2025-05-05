@@ -340,12 +340,18 @@ myApp.controller("OwnerAnalysisController", [
             display: true,
             position: "left",
             beginAtZero: true,
+            tricks: {
+              callback: formatLabels(value)
+            }
           },
           y2: {
             type: "linear",
             display: true,
             position: "right",
             beginAtZero: true,
+            tricks: {
+              callback: formatLabels(value)
+            }
           },
         };
       } else if (chartType !== "pie") {
@@ -360,9 +366,7 @@ myApp.controller("OwnerAnalysisController", [
             beginAtZero: true,
             ticks: {
               stepSize: stepSize,
-              callback: function(value) {
-                return Math.round(value);
-              }
+              callback: formatLabels(value)
             }
           }
         }
@@ -426,6 +430,14 @@ myApp.controller("OwnerAnalysisController", [
         options: chartOptions,
       });
     };
+
+    function formatLabels(value) {
+      value = Math.round(value);
+      if (value >= 1_000_000_000) return (value / 1_000_000_000) + 'B';
+      if (value >= 1_000_000) return (value / 1_000_000) + 'M';
+      if (value >= 1_000) return (value / 1_000) + 'K';
+      return value;
+    }
 
     // Shared function to load tab data
     function loadTabData(index) {
