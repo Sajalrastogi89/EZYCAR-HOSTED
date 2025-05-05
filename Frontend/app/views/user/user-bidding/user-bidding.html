@@ -145,7 +145,14 @@
                     {{bid.bidAmount | currency:"₹"}}</span
                   >
                   <span class="text-muted"
-                    ><small>{{bid.startDate | date:'MMM d, y'}}</small></span>
+                    ><small>{{bid.startDate | date:'MMM d, y'}}</small></span
+                  >
+                  <small
+                ><i
+                  class="pull-right glyphicon"
+                  ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"
+                ></i
+              ></small>
                 </div>
               </div>
             </uib-accordion-heading>
