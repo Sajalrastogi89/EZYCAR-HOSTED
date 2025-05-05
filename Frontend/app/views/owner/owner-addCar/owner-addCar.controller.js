@@ -67,6 +67,8 @@ myApp.controller("AddCar", [
      */
     $scope.onlyNumbers = "/^[1-9][0-9]*$/";
 
+    $scope.disabled = false; // Disable button state
+
     // ==========================================
     // Feature Management
     // ==========================================
@@ -112,11 +114,13 @@ myApp.controller("AddCar", [
      * and submits to the server
      */
     $scope.addCar = function () {
+      $scope.disabled = true;
       $scope.car.selectedFeatures = ($scope.selectedFeatures);
       
       // Basic validation
       let validationResult = CarFactory.validateCarData($scope.car);
       if (!validationResult.isValid) {
+        $scope.disabled = false;
         ToastService.error(validationResult.errors[0], 3000);
         return;
       }
@@ -135,11 +139,13 @@ myApp.controller("AddCar", [
           $scope.selectedFeatures = []; 
           $scope.carForm.$setPristine();
           ToastService.success("Car added successfully", 3000); 
+          $scope.disabled = false;
         })
         .catch((error) => {
           const errorMessage =
             error.data?.message || error.statusText || "Failed to add car";
           ToastService.error(errorMessage, 3000); 
+          $scope.disabled = false;
         });
     };
   },

@@ -247,7 +247,7 @@
                 <div class="row">
                   <div class="col-xs-12" ng-class="{'has-error': selectedFeatures.length < 1 && formSubmitted}">
                     <div class="form-group">
-                      <div class="btn-group btn-group-justified">
+                      <div class="btn-group btn-group-justified" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                         <div class="btn-group" ng-repeat="feature in availableFeatures" ng-if="$index < 5">
                           <button type="button" class="btn" 
                             ng-class="{'btn-primary': selectedFeatures.indexOf(feature) > -1, 'btn-default': selectedFeatures.indexOf(feature) === -1}"
@@ -257,7 +257,7 @@
                           </button>
                         </div>
                       </div>
-                      <div class="btn-group btn-group-justified" style="margin-top: 10px;">
+                      <div class="btn-group btn-group-justified" style="margin-top: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                         <div class="btn-group" ng-repeat="feature in availableFeatures" ng-if="$index >= 5">
                           <button type="button" class="btn" 
                             ng-class="{'btn-primary': selectedFeatures.indexOf(feature) > -1, 'btn-default': selectedFeatures.indexOf(feature) === -1}"
@@ -290,7 +290,7 @@
         <div class="form-group text-center">
           <button type="submit" class="btn btn-lg"
                   ng-class="{'btn-primary': !carForm.$invalid && car.image && selectedFeatures.length > 0, 'btn-default': carForm.$invalid || !car.image || selectedFeatures.length === 0}"
-                  ng-disabled="carForm.$invalid || !car.image || selectedFeatures.length === 0">
+                  ng-disabled="carForm.$invalid || !car.image || selectedFeatures.length === 0 || disabled">
             <i class="fa fa-plus-circle"></i> Add Car
           </button>
           <p class="help-block text-danger" ng-show="carForm.$invalid || !car.image || selectedFeatures.length === 0">
