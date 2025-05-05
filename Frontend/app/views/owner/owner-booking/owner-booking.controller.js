@@ -137,7 +137,7 @@ myApp.controller("ownerBookingController", [
     $scope.shouldShowStartOdometer = function(booking) {
       const startDate = new Date(booking.startDate);
       const today = new Date();
-      return $scope.formatLocalDate(startDate) === $scope.formatLocalDate(today);
+      return $scope.formatLocalDate(today) >= $scope.formatLocalDate(startDate);
     };
 
     /**
