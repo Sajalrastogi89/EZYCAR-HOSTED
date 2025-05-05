@@ -311,7 +311,7 @@
                 </div>
 
                 <!-- Ending Odometer -->
-                <div class="panel panel-warning" ng-if="shouldShowEndOdometer(booking) && !booking.endOdometer">
+                <div class="panel panel-warning" ng-if="shouldShowEndOdometer(booking) && booking.paymentStatus==='pending' && booking.startOdometer">
                   <div class="panel-heading">
                     <h3 class="panel-title">
                       <i class="fa fa-tachometer"></i> Enter Ending Odometer Reading
