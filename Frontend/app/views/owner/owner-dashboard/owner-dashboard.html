@@ -245,10 +245,11 @@
   <!-- Loading State -->
   <div class="text-center" ng-show="isLoading">
     <uib-progress>
-      <uib-bar value="100" type="primary">
-        <i class="fa fa-spinner fa-spin"></i> Loading ...
+      <uib-bar value="100" type="info" class="progress-striped active">
+        <span>Loading cars...</span>
       </uib-bar>
     </uib-progress>
+    <h4><i class="fa fa-spinner fa-spin"></i> Finding cars...</h4>
   </div>
 
   <!-- No Cars State -->
