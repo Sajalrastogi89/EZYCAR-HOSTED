@@ -315,6 +315,14 @@ myApp.controller("OwnerAnalysisController", [
       }, 0);
     };
 
+    // Function to format large numbers with K, M, B suffixes
+    $scope.formatLabels = function(value) {
+      if (value >= 1000000000) return (value / 1000000000).toFixed(1) + 'B';
+      if (value >= 1000000) return (value / 1000000).toFixed(1) + 'M';
+      if (value >= 1000) return (value / 1000).toFixed(1) + 'K';
+      return value;
+    };
+
     $scope.renderChart = function (
       elementId,
       labels,
@@ -342,7 +350,7 @@ myApp.controller("OwnerAnalysisController", [
             beginAtZero: true,
             ticks: {
               callback: function(value) {
-                return formatLabels(value);
+                return $scope.formatLabels(value);
               }
             }
           },
@@ -353,7 +361,7 @@ myApp.controller("OwnerAnalysisController", [
             beginAtZero: true,
             ticks: {
               callback: function(value) {
-                return formatLabels(value);
+                return $scope.formatLabels(value);
               }
             }
           },
@@ -371,7 +379,7 @@ myApp.controller("OwnerAnalysisController", [
             ticks: {
               stepSize: stepSize,
               callback: function(value) {
-                return formatLabels(Math.round(value));
+                return $scope.formatLabels(Math.round(value));
               }
             }
           }
@@ -436,14 +444,6 @@ myApp.controller("OwnerAnalysisController", [
         options: chartOptions,
       });
     };
-
-    function formatLabels(value) {
-      if (value >= 1_000_000_000) return (value / 1_000_000_000).toFixed(1) + 'B';
-      if (value >= 1_000_000) return (value / 1_000_000).toFixed(1) + 'M';
-      if (value >= 1_000) return (value / 1_000).toFixed(1) + 'K';
-      return value;
-    }
-    
 
     // Shared function to load tab data
     function loadTabData(index) {
