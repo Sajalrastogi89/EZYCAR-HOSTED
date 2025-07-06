@@ -32,32 +32,27 @@ EZYCAR revolutionizes the car rental industry by introducing a **dynamic bidding
 
 ## 📸 **Project Showcase**
 
-### 🖥️ **Desktop Experience**
+<div align="center">
+
+### 🎬 **Demo Video**
+
+<video width="100%" max-width="800" autoplay loop muted playsinline>
+  <source src="Readme.assets/VID-20250706-WA0001.mp4" type="video/mp4">
+</video>
+
+*🚀 Watch EZYCAR in action - From browsing cars to successful booking in under 2 minutes!*
+
+---
+
+### 📱 **Application Screenshots**
 
 <div align="center">
 
-#### 🏠 **Home Dashboard**
-![Home Dashboard](screenshots/home-dashboard.png)
-*Clean, intuitive interface showcasing available cars with smart filtering*
-
-#### 🚗 **Car Listing Page**
-![Car Listings](screenshots/car-listings.png)
-*Browse through premium car collections with detailed specifications*
-
-#### 💰 **Bidding Interface**
-![Bidding System](screenshots/bidding-interface.png)
-*Revolutionary bidding system that makes rental pricing transparent and fair*
-
-</div>
-
-### 📱 **Mobile Experience**
-
-<div align="center">
-
-| User Dashboard | Chat Interface | Booking Flow |
+| ![Screenshot 1](Readme.assets/Screenshot_20250702_020528_Chrome.jpg) | ![Screenshot 2](Readme.assets/Screenshot_20250702_020554_Chrome.jpg) | ![Screenshot 3](Readme.assets/Screenshot_20250702_020630_Chrome.jpg) |
 |:---:|:---:|:---:|
-| ![Mobile Dashboard](screenshots/mobile-dashboard.png) | ![Mobile Chat](screenshots/mobile-chat.png) | ![Mobile Booking](screenshots/mobile-booking.png) |
-| *Seamless mobile dashboard* | *Real-time messaging* | *Streamlined booking process* |
+
+| ![Screenshot 4](Readme.assets/Screenshot_20250706_144507_Chrome.jpg) | ![Screenshot 5](Readme.assets/Screenshot_20250706_144605_Samsung%20Notes.jpg) |
+|:---:|:---:|
 
 </div>
 
@@ -66,7 +61,6 @@ EZYCAR revolutionizes the car rental industry by introducing a **dynamic bidding
 <details>
 <summary><strong>🚙 Car Owner Experience</strong></summary>
 
-![Owner Dashboard](screenshots/owner-dashboard.png)
 - **Analytics Dashboard**: Track earnings, popular cars, and booking trends
 - **Bid Management**: Accept or reject bids with detailed user information
 - **Car Management**: Easy car listing with drag-drop image uploads
@@ -76,7 +70,6 @@ EZYCAR revolutionizes the car rental industry by introducing a **dynamic bidding
 <details>
 <summary><strong>🧑‍💼 Renter Experience</strong></summary>
 
-![User Dashboard](screenshots/user-dashboard.png)
 - **Smart Search**: Find perfect cars based on location, budget, and features
 - **Bid Tracking**: Monitor all your bids in real-time
 - **Booking History**: Complete rental history with downloadable invoices
@@ -86,7 +79,6 @@ EZYCAR revolutionizes the car rental industry by introducing a **dynamic bidding
 <details>
 <summary><strong>⚙️ Admin Panel</strong></summary>
 
-![Admin Panel](screenshots/admin-panel.png)
 - **Platform Management**: Add new cities, car categories, and features
 - **User Management**: Monitor platform activity and user engagement
 - **System Analytics**: Platform-wide statistics and performance metrics
@@ -210,7 +202,7 @@ EZYCAR Hosted/
 
 <div align="center">
 
-![Database Schema](screenshots/database-schema.png)
+
 *Our carefully crafted database schema ensures optimal performance and scalability*
 
 </div>
@@ -330,7 +322,7 @@ graph TD
 
 <div align="center">
 
-![API Documentation](screenshots/api-docs.png)
+
 *Comprehensive API documentation with interactive testing*
 
 </div>
@@ -384,7 +376,7 @@ graph TD
 ### 💰 **1. Revolutionary Bidding System**
 <div align="center">
 
-![Bidding Flow](screenshots/bidding-flow.gif)
+
 *Watch how our bidding system creates fair market prices*
 
 </div>
@@ -397,7 +389,7 @@ graph TD
 ### 💬 **2. Lightning-Fast Real-time Chat**
 <div align="center">
 
-![Chat Interface](screenshots/chat-demo.gif)
+
 *Seamless communication between car owners and renters*
 
 </div>
@@ -410,7 +402,7 @@ graph TD
 ### 📋 **3. Comprehensive Booking Management**
 <div align="center">
 
-![Booking Timeline](screenshots/booking-timeline.png)
+
 *Complete booking lifecycle from bid to completion*
 
 </div>
@@ -423,7 +415,7 @@ graph TD
 ### 📤 **4. Professional File Upload System**
 <div align="center">
 
-![Upload Interface](screenshots/upload-demo.gif)
+
 *Drag, drop, and upload car images effortlessly*
 
 </div>
@@ -436,7 +428,7 @@ graph TD
 ### 📈 **5. Advanced Analytics Dashboard**
 <div align="center">
 
-![Analytics Dashboard](screenshots/analytics-dashboard.png)
+
 *Data-driven insights for smarter business decisions*
 
 </div>
